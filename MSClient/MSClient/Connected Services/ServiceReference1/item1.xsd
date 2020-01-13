@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfMSServer/Service1/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfMSServer" />
+  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfMSServer/Service1/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfMSServer/Service1/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:element name="ClientConnected">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClientConnectedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClientDisconnected">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClientDisconnectedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchUsernamePasswordInDB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfMSServer" minOccurs="0" name="client" nillable="true" type="q1:Clients" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchUsernamePasswordInDBResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchUsernamePasswordInDBResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnterClientToDB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfMSServer" minOccurs="0" name="client" nillable="true" type="q2:Clients" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnterClientToDBResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EnterClientToDBResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fromClient" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="toClient" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendRequestResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowAllPlayers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowAllPlayersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ShowAllPlayersResult" nillable="true" type="q3:ArrayOfArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowAllGames">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowAllGamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ShowAllGamesResult" nillable="true" type="q4:ArrayOfArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendRequestDenied">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fromClient" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="toClient" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendRequestDeniedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OpenBoardGame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fromClient" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="toClient" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="size" type="xs:int" />
+        <xs:element minOccurs="0" name="mines" type="xs:int" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="minesPositions" nillable="true" type="q5:ArrayOfTupleOfintint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OpenBoardGameResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallButtonClick">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="row" type="xs:int" />
+        <xs:element minOccurs="0" name="col" type="xs:int" />
+        <xs:element minOccurs="0" name="tag" type="xs:int" />
+        <xs:element minOccurs="0" name="fromClient" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="toClient" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallButtonClickResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallRightButtonClick">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="row" type="xs:int" />
+        <xs:element minOccurs="0" name="col" type="xs:int" />
+        <xs:element minOccurs="0" name="tag" type="xs:int" />
+        <xs:element minOccurs="0" name="fromClient" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="toClient" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallRightButtonClickResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallYouWin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="toClient" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallYouWinResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GameConnect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfMSServer" minOccurs="0" name="game" nillable="true" type="q6:Games" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GameConnectResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GameDisconnect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfMSServer" minOccurs="0" name="game" nillable="true" type="q7:Games" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GameDisconnectResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnterGameToDB">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfMSServer" minOccurs="0" name="game" nillable="true" type="q8:Games" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnterGameToDBResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowOngoingGames">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowOngoingGamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ShowOngoingGamesResult" nillable="true" type="q9:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallUserExit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Rival" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallUserExitResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fromClient" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateClientsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="clients" nillable="true" type="q10:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fromClient" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestDenied">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OpenGame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fromClient" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="size" type="xs:int" />
+        <xs:element minOccurs="0" name="mines" type="xs:int" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="minesPositions" nillable="true" type="q11:ArrayOfTupleOfintint" />
+        <xs:element minOccurs="0" name="flag" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Button_Click_Reaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="row" type="xs:int" />
+        <xs:element minOccurs="0" name="col" type="xs:int" />
+        <xs:element minOccurs="0" name="tag" type="xs:int" />
+        <xs:element minOccurs="0" name="fromClient" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="other" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Right_Button_Click_Reaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="row" type="xs:int" />
+        <xs:element minOccurs="0" name="col" type="xs:int" />
+        <xs:element minOccurs="0" name="tag" type="xs:int" />
+        <xs:element minOccurs="0" name="fromClient" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="YouWin">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserExit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="activator" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="other" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

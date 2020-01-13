@@ -1,0 +1,32 @@
+﻿<Window x:Class="MSClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MSClient"
+        mc:Ignorable="d"
+         Background="black"
+        Title="Login" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <MediaElement  Height="114" HorizontalAlignment="Left" Margin="185.333,10,0,0" 
+        Name="mediaElement1" VerticalAlignment="Top" Width="310" Source="C:\Users\mor_t\Downloads\c# projects\MSClient\MSClient\giphy.gif"
+        LoadedBehavior="Play" Stretch="Fill" SpeedRatio="1" IsMuted="False" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" />
+        <Label Grid.Row="0"  Grid.ColumnSpan="3" Foreground="White" >Username:</Label>
+        <TextBox Margin="10,10,236,145" Grid.Row="1"  Name="tbUsername"  Grid.ColumnSpan="2" />
+        <Label Grid.Row="1"  Grid.ColumnSpan="3" Margin="0,66,-0.333,100" Foreground="White">Password:</Label>
+        <TextBox Margin="10,101,236,54" Grid.Row="1"  Name="tbPassword"  Grid.ColumnSpan="2" />
+        <Button Content ="Login" Grid.Row="2" Margin="49,10,236,106" Click="Button_Click" FontStyle="Oblique" FontWeight="DemiBold" Background="LightSkyBlue" Grid.ColumnSpan="2" />
+        <Label Grid.Row="1" Margin="10,156,112.667,10" Grid.Column="2" Foreground="White">not registered?</Label>
+        <Button Content ="Register" Grid.Row="2" Margin="216.333,10,68.667,106" Click="Register_Button_Click"  FontStyle="Oblique" FontWeight="DemiBold" Background="LightSkyBlue" Grid.Column="1" Grid.ColumnSpan="2" />
+    </Grid>
+</Window>

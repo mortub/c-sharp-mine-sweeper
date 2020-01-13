@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MineSweeperDB1ModelStoreContainer" CdmEntityContainer="MineSweeperDB1Entities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="MineSweeperDB1Model.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="MineSweeperDB1Model.Clients">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Games">
+      <EntityTypeMapping TypeName="MineSweeperDB1Model.Games">
+        <MappingFragment StoreEntitySet="Games">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EndingDate" ColumnName="EndingDate" />
+          <ScalarProperty Name="Winner" ColumnName="Winner" />
+          <ScalarProperty Name="Loser" ColumnName="Loser" />
+          <ScalarProperty Name="tie" ColumnName="tie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="GameClients" TypeName="MineSweeperDB1Model.GameClients" StoreEntitySet="GameClients">
+      <EndProperty Name="Clients">
+        <ScalarProperty Name="UserName" ColumnName="Client_UserName" />
+      </EndProperty>
+      <EndProperty Name="Games">
+        <ScalarProperty Name="Id" ColumnName="Game_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

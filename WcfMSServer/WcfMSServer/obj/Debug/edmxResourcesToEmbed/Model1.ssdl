@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MineSweeperDB1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="GameClients">
+    <Key>
+      <PropertyRef Name="Game_Id" />
+      <PropertyRef Name="Client_UserName" />
+    </Key>
+    <Property Name="Game_Id" Type="int" Nullable="false" />
+    <Property Name="Client_UserName" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Games">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="EndingDate" Type="datetime" Nullable="false" />
+    <Property Name="Winner" Type="nvarchar(max)" />
+    <Property Name="Loser" Type="nvarchar(max)" />
+    <Property Name="tie" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_GameClients_dbo_Clients_Client_UserName">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GameClients" Type="Self.GameClients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="GameClients">
+        <PropertyRef Name="Client_UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_GameClients_dbo_Games_Game_Id">
+    <End Role="Games" Type="Self.Games" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GameClients" Type="Self.GameClients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Games">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GameClients">
+        <PropertyRef Name="Game_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MineSweeperDB1ModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GameClients" EntityType="Self.GameClients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Games" EntityType="Self.Games" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_GameClients_dbo_Clients_Client_UserName" Association="Self.FK_dbo_GameClients_dbo_Clients_Client_UserName">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="GameClients" EntitySet="GameClients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_GameClients_dbo_Games_Game_Id" Association="Self.FK_dbo_GameClients_dbo_Games_Game_Id">
+      <End Role="Games" EntitySet="Games" />
+      <End Role="GameClients" EntitySet="GameClients" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

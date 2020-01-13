@@ -1,0 +1,14 @@
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\obj\Debug\WcfMSServer.csprojResolveAssemblyReference.cache
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\obj\Debug\WcfMSServer.csproj.CoreCompileInputs.cache
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\bin\Debug\WcfMSServer.dll.config
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\bin\Debug\WcfMSServer.dll
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\bin\Debug\WcfMSServer.pdb
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\obj\Debug\WcfMSServer.dll
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\obj\Debug\WcfMSServer.pdb
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\bin\Debug\MineSweeperDB1_log.ldf
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\bin\Debug\MineSweeperDB1.mdf
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\bin\Debug\EntityFramework.dll
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\bin\Debug\EntityFramework.xml
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mor_t\Downloads\c# projects\WcfMSServer\WcfMSServer\obj\Debug\WcfMSServer.csproj.CopyComplete
